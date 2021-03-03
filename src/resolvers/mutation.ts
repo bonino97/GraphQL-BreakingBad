@@ -22,7 +22,7 @@ const mutation: IResolvers = {
         .collection(COLLECTIONS.VOTES)
         .insertOne(vote)
         .then(async () => {
-          sendNotification(pubSub, db);
+          sendNotification(pubSub, db, character);
           return response(true, `Voto emitido correctamente...`, db);
         })
         .catch(async () => {
@@ -55,7 +55,7 @@ const mutation: IResolvers = {
           }
         )
         .then(async () => {
-          sendNotification(pubSub, db);
+          sendNotification(pubSub, db, character);
           return response(true, `Voto actualizado correctamente...`, db);
         })
         .catch(async () => {
@@ -77,7 +77,7 @@ const mutation: IResolvers = {
         .collection(COLLECTIONS.VOTES)
         .deleteOne({ id })
         .then(async () => {
-          sendNotification(pubSub, db);
+          sendNotification(pubSub, db, '');
           return response(true, `Voto eliminado correctamente...`, db);
         })
         .catch(async () => {

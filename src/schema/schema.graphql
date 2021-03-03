@@ -1,8 +1,4 @@
 type Query {
-  hello: String!
-  helloWithName(name: String!): String!
-  helloToGraphQLCourse: String!
-  list: [String]
   characters: [Character!]!
   character(id: ID!): Character
 }
@@ -32,4 +28,5 @@ type Mutation {
 
 type Subscription {
   changeVotes: [Character!]!
+  changeVote(id: ID!): Character!
 }

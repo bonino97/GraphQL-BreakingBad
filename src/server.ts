@@ -15,7 +15,6 @@ if (process.env.NODE_ENV !== 'production') {
 async function init() {
   const app = express();
   const pubSub = new PubSub();
-
   app.use('*', cors());
   app.use(compression());
 
